@@ -1,0 +1,167 @@
+<div class="plafond">
+</div>
+
+
+
+<!-- Library -->
+<div class="container">
+	<div class="row">
+			<div class="col-xs-offset-0 col-xs-1 col-xs-6">
+				<script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
+					<script type="text/javascript">
+					new TradingView.widget({
+					  "width": 875,
+					  "height": 610,
+					  "symbol": "NASDAQ:AAPL",
+					  "interval": "D",
+					  "timezone": "Etc/UTC",
+					  "theme": "White",
+					  "style": "1",
+					  "locale": "en",
+					  "toolbar_bg": "rgba(255, 255, 255, 1)",
+					  "allow_symbol_change": true,
+					  "hideideas": true,
+					  "show_popup_button": true,
+					  "popup_width": "1000",
+					  "popup_height": "650"
+					});
+					</script>
+
+			</div>
+
+			<div class="col-xs-offset-8 col-xs-1 col-xs-2">
+				<div id="tv-miniwidget-dec48"></div>
+			</div>
+
+
+	</div><!-- row -->
+</div><!-- container -->
+
+
+<script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
+<script type="text/javascript">
+new TradingView.MiniWidget({
+  "container_id": "tv-miniwidget-dec48",
+  "tabs": [
+    "Equities",
+    "Commodities",
+    "Bonds",
+    "Forex"
+  ],
+  "symbols": {
+    "Equities": [
+      [
+        "S&P500",
+        "SPX500"
+      ],
+      [
+        "NQ100",
+        "NAS100"
+      ],
+      [
+        "Dow30",
+        "DOWI"
+      ],
+      [
+        "Nikkei225",
+        "JPN225"
+      ],
+      [
+        "Apple",
+        "AAPL "
+      ],
+      [
+        "Google",
+        "GOOG"
+      ]
+    ],
+    "Commodities": [
+      [
+        "Emini",
+        "ES1!"
+      ],
+      [
+        "Euro",
+        "E61!"
+      ],
+      [
+        "Gold",
+        "GC1!"
+      ],
+      [
+        "Oil",
+        "CL1!"
+      ],
+      [
+        "Gas",
+        "NG1!"
+      ],
+      [
+        "Corn",
+        "ZC1!"
+      ]
+    ],
+    "Bonds": [
+      [
+        "US 2YR",
+        "TUZ2016"
+      ],
+      [
+        "US 10YR",
+        "TYZ2016"
+      ],
+      [
+        "US 30YR",
+        "US1!"
+      ],
+      [
+        "Euro Bund",
+        "FX:BUND"
+      ],
+      [
+        "Euro BTP",
+        "EUREX:II1!"
+      ],
+      [
+        "Euro BOBL",
+        "EUREX:HR1!"
+      ]
+    ],
+    "Forex": [
+      "FX:EURUSD",
+      "FX:GBPUSD",
+      "FX:USDJPY",
+      "FX:USDCHF",
+      "FX:AUDUSD",
+      "FX:USDCAD"
+    ]
+  },
+  "gridLineColor": "#E9E9EA",
+  "fontColor": "#83888D",
+  "underLineColor": "#dbeffb",
+  "trendLineColor": "#4bafe9",
+  "activeTickerBackgroundColor": "#EDF0F3",
+  "large_chart_url": "https://www.tradingview.com/chart/",
+  "noGraph": false,
+  "width": 300,
+  "height": 610,
+  "locale": "en"
+});
+</script>
+
+<style>
+	
+	h1{
+		text-align:center;
+	}
+	
+	input{
+		border-radius:16px;
+	}
+
+	body {
+		background: url(http://subtlepatterns.com/patterns/scribble_light.png) ;
+	}
+
+
+</style>
