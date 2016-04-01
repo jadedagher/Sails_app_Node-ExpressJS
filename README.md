@@ -17,5 +17,13 @@ sails version 0.12.1</br>
 node version 5.6.0</br>
 npm version 3.6.0
 
+# ScreenShots
+
+![alt tag](https://github.com/jadedagher/Sails_app_Node-ExpressJS/blob/master/Hello_screenshot.png)
+![alt tag](https://github.com/jadedagher/Sails_app_Node-ExpressJS/blob/master/SignUpForm_screenshot.png)
+![alt tag](https://github.com/jadedagher/Sails_app_Node-ExpressJS/blob/master/ProfilPage_screenshot.png)
+![alt tag](https://github.com/jadedagher/Sails_app_Node-ExpressJS/blob/master/AdminPanel_screenshot.png)
+![alt tag](https://github.com/jadedagher/Sails_app_Node-ExpressJS/blob/master/databaseView_screenshot.png)
+
 
 
