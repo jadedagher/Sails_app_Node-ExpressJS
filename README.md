@@ -3,6 +3,8 @@
 
 A simple [Sails](http://sailsjs.org) application using Node.js & express.js </br>
 
+The project inldude only UserController/UserModel to create a basic user interface template 
+
 #You can launch the application by: </br>
 
 1) Downloading all the files</br>
