@@ -86,7 +86,8 @@
  	},
 
  	//passing parameters to the profil page (url: user/profil/345678987678)
- 	profil: function(req, res, next) {
+ 	
+   profil: function(req, res, next) {
 
  		User.findOne({
  				id: req.params['id']
@@ -103,7 +104,8 @@
 
 
  	//passing parameters to the home page (url: user/lahome/345678987678)
- 	lahome: function(req, res, next) {
+ 	
+   lahome: function(req, res, next) {
  		User.findOne({
  				id: req.params['id']
  			})
@@ -118,7 +120,8 @@
 
 
  	//passing parameters to the index page (url: locahost:1234/user)	ADMINISTRATION PAGE
- 	index: function(req, res, next) {
+ 	
+   index: function(req, res, next) {
 
  		/////test
  		// console.log(new Date()); //mi ici au hasard 

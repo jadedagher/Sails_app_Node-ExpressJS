@@ -25,7 +25,8 @@ module.exports = {
 
     pseudo: {
       type: "string",
-      required: true
+      required: true,
+      unique: true
     },
 
     email: {
@@ -44,7 +45,7 @@ module.exports = {
       type: 'string'
     },
 
-    
+
     online: {
       type: "boolean",
       defaultsTo: false
@@ -73,7 +74,7 @@ module.exports = {
       });
     }
 
-    //hash -> specifique a bcrypt (a voir absolument) 
+    //hash -> specifique a bcrypt (a voir absolument)
     //pour utliser bcrypt toujours faire require('brcypt').
     require('bcrypt').hash(values.password, 10, function passwordEncrypted(err, encryptedPassword) {
       if (err) return next(err);

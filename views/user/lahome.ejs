@@ -1,160 +1,120 @@
-<div class="plafond">
-</div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Comaptible" content="IE=edge">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
 
+</head>
 
-<!-- Library -->
-<div class="container">
-	<div class="row">
-			<div class="col-xs-offset-0 col-xs-1 col-xs-6">
-				<script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
-					<script type="text/javascript">
-					new TradingView.widget({
-					  "width": 875,
-					  "height": 610,
-					  "symbol": "NASDAQ:AAPL",
-					  "interval": "D",
-					  "timezone": "Etc/UTC",
-					  "theme": "White",
-					  "style": "1",
-					  "locale": "en",
-					  "toolbar_bg": "rgba(255, 255, 255, 1)",
-					  "allow_symbol_change": true,
-					  "hideideas": true,
-					  "show_popup_button": true,
-					  "popup_width": "1000",
-					  "popup_height": "650"
-					});
-					</script>
+<body>
 
-			</div>
+  <div class="plafond">
+  </div>
 
-			<div class="col-xs-offset-8 col-xs-1 col-xs-2">
-				<div id="tv-miniwidget-dec48"></div>
-			</div>
+  <div class="container">
+    <div class="col-md-12">
+      <h1><strong>Data Visualization</strong></h1>
+      <p id="time"></p>
+    </div>
+  </div>
+
+  <!-- _________________________btn_________________________ -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+
+        <button type="button" class="btn btn-info" onclick="buttonPressed('year')">1 year</button>
+
+        <button type="button" class="btn btn-info" onclick="buttonPressed('halfyear')">6 months</button>
+
+        <button type="button" class="btn btn-info" onclick="buttonPressed('thisMonth')">1 month</button>
+
+        <button type="button" class="btn btn-info" onclick="buttonPressed('thisWeek')">1 week</button>
+
+        <button type="button" class="btn btn-warning" onclick="reloadPage()">Refresh data</button>
 
 
-	</div><!-- row -->
-</div><!-- container -->
+      </div>
+    </div>
+  </div>
 
 
-<script type="text/javascript" src="https://d33t3vvu2t2yu5.cloudfront.net/tv.js"></script>
-<script type="text/javascript">
-new TradingView.MiniWidget({
-  "container_id": "tv-miniwidget-dec48",
-  "tabs": [
-    "Equities",
-    "Commodities",
-    "Bonds",
-    "Forex"
-  ],
-  "symbols": {
-    "Equities": [
-      [
-        "S&P500",
-        "SPX500"
-      ],
-      [
-        "NQ100",
-        "NAS100"
-      ],
-      [
-        "Dow30",
-        "DOWI"
-      ],
-      [
-        "Nikkei225",
-        "JPN225"
-      ],
-      [
-        "Apple",
-        "AAPL "
-      ],
-      [
-        "Google",
-        "GOOG"
-      ]
-    ],
-    "Commodities": [
-      [
-        "Emini",
-        "ES1!"
-      ],
-      [
-        "Euro",
-        "E61!"
-      ],
-      [
-        "Gold",
-        "GC1!"
-      ],
-      [
-        "Oil",
-        "CL1!"
-      ],
-      [
-        "Gas",
-        "NG1!"
-      ],
-      [
-        "Corn",
-        "ZC1!"
-      ]
-    ],
-    "Bonds": [
-      [
-        "US 2YR",
-        "TUZ2016"
-      ],
-      [
-        "US 10YR",
-        "TYZ2016"
-      ],
-      [
-        "US 30YR",
-        "US1!"
-      ],
-      [
-        "Euro Bund",
-        "FX:BUND"
-      ],
-      [
-        "Euro BTP",
-        "EUREX:II1!"
-      ],
-      [
-        "Euro BOBL",
-        "EUREX:HR1!"
-      ]
-    ],
-    "Forex": [
-      "FX:EURUSD",
-      "FX:GBPUSD",
-      "FX:USDJPY",
-      "FX:USDCHF",
-      "FX:AUDUSD",
-      "FX:USDCAD"
-    ]
-  },
-  "gridLineColor": "#E9E9EA",
-  "fontColor": "#83888D",
-  "underLineColor": "#dbeffb",
-  "trendLineColor": "#4bafe9",
-  "activeTickerBackgroundColor": "#EDF0F3",
-  "large_chart_url": "https://www.tradingview.com/chart/",
-  "noGraph": false,
-  "width": 300,
-  "height": 610,
-  "locale": "en"
-});
-</script>
+  <!-- _________________________historic_chart_________________________ -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" id="historic_chart_div" style="width: 1200px; height: 800px"></div>
+    </div>
+  </div>
+
+  <!-- _________________________buy_________________________ -->
+  <div class="container">
+    <div class="row">
+      <form class="form-inline">
+        <div class="form-group">
+
+          <label class="sr-only" for="exampleInputAmount"></label>
+
+          <div class="input-group">
+
+            <div class="input-group-addon">Number of Action</div>
+            <input type="text" class="form-control" id="exampleInputAmount1" placeholder="Quantity">
+            <div class="input-group-addon"><p id="LastTradePriceOnlyToCall"></p></div>
+
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success" id="call">Call</button>
+      </form>
+
+      </br>
+      </br>
+
+      <form class="form-inline">
+        <div class="form-group">
+
+          <label class="sr-only" for="exampleInputAmount"></label>
+
+          <div class="input-group">
+
+            <div class="input-group-addon">Number of Action</div>
+            <input type="text" class="form-control" id="exampleInputAmount2" placeholder="Quantity">
+            <div class="input-group-addon"><p id="LastTradePriceOnlyToPut"></p></div>
+
+          </div>
+        </div>
+        <button type="submit" class="btn btn-danger" id="put">Put</button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- _________________________stock informations_________________________ -->
+  <div class="container">
+    <div class="col-md-12">
+      <h2 id="Name"></h2>
+      <blockquote>
+        <ul>
+          <li><h2 style="color: green;"id="Change"></h2></li>
+          <li><h2 style="color: green;"id="LastTradePriceOnly"></h2></li>
+          <li><h2 id="DaysHigh"></h2></li>
+          <li><h2 id="DaysLow"></h2></li>
+          <li><h2 id="MarketCapitalization"></h2></li>
+        </ul>
+      </blockquote>
+    </div>
+  </div>
+
+</body>
+
 
 <style>
-	
+
 	h1{
 		text-align:center;
 	}
-	
+
 	input{
 		border-radius:16px;
 	}
